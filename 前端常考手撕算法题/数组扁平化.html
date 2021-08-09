@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>数组扁平化</title>
+</head>
+<body>
+<script>
+    //1）递归方式 + concat()：
+    function flatten(arr) {
+        let ans = [];
+        let len = arr.length;
+        for(let i = 0; i < len; i++) {
+            if(Array.isArray(arr[i])) {
+                //如果说遍历到的数组元素是数组的时候，那么递归调用flatten函数对下一层进行展开。
+                ans = ans.concat(flatten(arr[i]));
+            } else {
+                //如果遇到的是基本数据类型，那么就直接添加进结果数组。
+                ans.push(arr[i])
+            }
+        }
+        return ans;
+    }
+    //2) 非递归方式 + 展开运算符... + concat()
+    function flatten1(arr){
+        //some()函数用于检测数组中的元素是否满足某个条件，如果满足则剩下的不再检测。
+        //注：1）some()函数不会改变原始数组。 2）some()函数不会检测空数组
+        while (arr.some(item => Array.isArray(item))){
+            arr = [].concat(...arr);// 如果你明白展开运算符的作用，是不是很简单？
+        }
+        return arr;
+    }
+
+    let arr = [1,2,[3,[4,5,[6,7]]]];
+    console.log(flatten(arr));
+    console.log(arr);
+    console.log(flatten1(arr));
+</script>
+</body>
+</html>

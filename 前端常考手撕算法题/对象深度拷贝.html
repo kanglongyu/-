@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象深度拷贝</title>
+</head>
+<body>
+<script>
+    /*
+        1）JSON.parse(JSON.stringify(obj))
+        缺点，只能简单拷贝基本数据类型，无法拷贝引用数据类型
+        2）递归判断某个元素是不是对象，如果不是的话，直接添加，如果是的话，递归拷贝该对象或者函数的各个属性。
+     */
+    function deepCopy(obj) {
+        //首先判断该处是对象还是数组
+        let newObj = obj.constructor === Array ? [] : {};
+        //遍历对象的各个属性
+        //基本数据类型的直接拷贝
+        if(typeof obj !== 'object') {
+            return obj;
+        } else {
+            for(let key in obj) {
+                if(typeof obj[key] === 'object') {
+                    newObj[key] = deepCopy(obj[key]);
+                } else {
+                    newObj[key] = obj[key];
+                }
+            }
+        }
+        return newObj;
+    }
+    let obj = {
+        name: "kk",
+        age: 10,
+        move: function () {
+            console.log("walk or run");
+        }
+    }
+    console.log(deepCopy(obj));
+</script>
+</body>
+</html>

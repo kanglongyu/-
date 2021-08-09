@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>防抖和节流</title>
+</head>
+<body>
+<div>
+    <input type="button" id="btn" value="点击">
+</div>
+<script>
+    //1.节流函数：在事件触发以后延迟一段时间再执行，如果在规定的时间内再次触发，那么重新开始计时。
+    function debounce(fn, delay) {
+        let timer = null;
+        return function() {
+            if(timer) {
+                clearTimeout(timer);
+            }
+            timer = setTimeout(() => {
+                fn.apply(this, arguments);
+            },delay)
+        }
+    }
+    //2.节流函数：在规定的时间内，无论触发多少次，都只执行一次。
+    function throttle(fn, delay) {
+        let previous = 0;
+        return function() {
+            let now = new Date().getTime();
+            if(now - previous > delay) {
+                fn.apply(this, arguments);
+                previous = now;
+            }
+        }
+    }
+    function test() {
+        console.log("1")
+    }
+    let btn = document.getElementById("btn");
+    document.addEventListener("click", debounce(test, 1000));
+</script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手写apply\call\bind</title>
+</head>
+<body>
+<script>
+    //手写call方法
+    Function.prototype.myCall = function(context, ...args) {
+        //当context的值为null或者undefined的时候，默认绑定为window
+        if(typeof context === 'undefined' || context === null) {
+            context = window;
+        }
+        let fnSymbol = Symbol();//symbol函数的使用是为了确保是唯一值
+        context[fnSymbol] = this;
+        let fn = context[fnSymbol](...args);
+        delete context[fnSymbol];
+        return fn;
+    }
+
+    function test() {
+        console.log(this);
+    }
+    const obj = {
+        name: 'kk'
+    }
+
+    //test.call(obj);
+    test.myCall(obj);
+
+    //手写apply方法：
+    Function.prototype.myApply = function(context, args) {
+        if(typeof context === 'undefined' || context === null) {
+            context = window;
+        }
+        let fnSymbol = Symbol();
+        context[fnSymbol] = this;
+        console.log(this)
+        let fn = context[fnSymbol](...args)
+        return fn;
+    }
+    var name = 'kkk'
+    function test2() {
+        console.log(this.name);
+    }
+    const obj2 = {
+        name: 'kkdd'
+    }
+
+    //手写bind方法：
+    Function.prototype.myBind = function(context) {
+        // 判断是否是undefined和null
+        if (typeof context === "undefined" || context === null) {
+            context = window;
+        }
+        self = this;
+        return function(...args) {
+            return self.apply(context, args);
+        }
+    }
+</script>
+</body>
+</html>

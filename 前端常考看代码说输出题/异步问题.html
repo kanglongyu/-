@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    /*setTimeout(function () {
+        console.log(1);
+    }, 0)
+
+    new Promise(function (resolve) {
+        console.log(2);
+        for (var i = 0; i < 10000; i++) {
+            i == 9999 && resolve();
+        }
+        console.log(3);
+    }).then(function () {
+        console.log(4);
+    })
+    console.log(5);*/
+    //2,3,5,4,1
+
+    /*console.log('a')
+    setTimeout(() => {
+        console.log('b')
+    }, 0)
+    console.log('c')
+    Promise.resolve().then(() => {
+        console.log('d')
+    }).then(() => {
+        console.log('e')
+    })
+    console.log('f')*/
+    //a,c,f,d,e,b
+
+    // console.log('a')
+    // setTimeout(() => {
+    //     console.log('b')
+    //     setTimeout(() => {
+    //         console.log('bbbb')
+    //     }, 0)
+    // }, 0)
+    // console.log('c')
+    // Promise.resolve().then(() => {
+    //     console.log('d')
+    //     setTimeout(() => {
+    //         console.log('j')
+    //         Promise.resolve().then(() => {
+    //             console.log('kj')
+    //         })
+    //     }, 0)
+    //     Promise.resolve().then(() => {
+    //         console.log('k')
+    //     })
+    // }).then(() => {
+    //     console.log('e')
+    // })
+    // console.log('f')
+    // setTimeout(() => {
+    //     console.log('q')
+    //     setTimeout(() => {1
+    //         console.log('qqq')
+    //     }, 0)
+    // }, 0)
+    // //a,c,f,d,k,e,b,q,j,kj,bbbb,qqq
+
+    async function f1() {
+        setTimeout(() => {
+            console.log(9);
+        });
+        console.log(await 1);
+    }
+
+    async function f2() {
+        console.log(await 2);
+    }
+
+    async function f3() {
+        console.log(3);
+    }
+
+    setTimeout(() => {
+        setTimeout(() => {
+            console.log(10);
+        });
+        Promise.resolve(5).then(console.log)
+        console.log(6);
+    });
+
+    async function f4() {
+        new Promise((resolve) => {
+            console.log(4);
+            resolve(8)
+        }).then(console.log)
+    }
+    f1()
+    f2()
+    f3()
+    f4()
+    console.log(7);
+</script>
+</body>
+</html>

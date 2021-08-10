@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>闭包相关</title>
+</head>
+<body>
+<script>
+    /* 输出结果 */
+    for (var i = 0; i < 10; i++) {
+        setTimeout(() => {
+            console.log(i)
+        }, 0)
+    }
+
+    //10个10
+
+
+    //下面都是 0 - 9
+
+    // 使用 let
+    for (let i = 0; i < 10; i++) {
+        setTimeout(() => {
+            console.log(i)
+        }, 0)
+    }
+
+    // 使用闭包
+    for (var i = 0; i < 10; i++) {
+        (function (i) {
+            setTimeout(() => {
+                console.log(i)
+            }, 0)
+        })(i)
+    }
+
+    // 使用 setTimeout 的第三个参数
+    for (var i = 0; i < 10; i++) {
+        setTimeout((i) => {
+            console.log(i)
+        }, 0, i)
+    }
+
+
+</script>
+</body>
+</html>

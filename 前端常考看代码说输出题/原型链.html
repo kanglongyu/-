@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链</title>
+</head>
+<body>
+<script>
+    /* 输出结果 */
+    function F() { }
+    F.prototype.arr = [1]
+    F.prototype.b = 1
+
+    let obj1 = new F()
+    obj1.arr.push(2)
+    obj1.b = 2
+
+    let obj2 = new F()
+    console.log(obj2.arr, obj2.b)
+    // [1,2] 1
+
+    //对于非引用类型的数据结构，obj.xx=xxx，这样并不会顺着原型链去找，
+    // 会给这个实例对象添加一个xx属性，只有数组、对象等引用类型的，用这种方式，
+    // 可以去更改原型链上的内容，因为顺着地址去找的
+
+    function Person(name) {
+        this.name = name
+    }
+
+    function Student() {
+    }
+
+    Student.prototype = Person.prototype
+    Student.prototype.constructor = Student
+
+    var s = new Student('Tom')
+    console.log(s instanceof Person) // true
+
+</script>
+</body>
+</html>

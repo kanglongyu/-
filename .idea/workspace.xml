@@ -20,9 +20,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="916c1833-c018-4835-a743-0e9361e8ef23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/前端常考看代码说输出题/this.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/前端常考看代码说输出题/原型链.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/前端常考看代码说输出题/异步问题.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -59,6 +56,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\前端面试\前端常考手撕算法题\排序算法" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -70,7 +72,7 @@
       <workItem from="1628493848938" duration="5572000" />
       <workItem from="1628513533586" duration="187000" />
       <workItem from="1628513819478" duration="8537000" />
-      <workItem from="1628578209134" duration="6753000" />
+      <workItem from="1628578209134" duration="9622000" />
     </task>
     <servers />
   </component>

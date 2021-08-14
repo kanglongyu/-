@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两栏布局float</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+        html,body {
+            height: 100%;
+        }
+        .left{
+            width:100px;
+            height: 100%;
+            float:left;
+            background-color: red;
+        }
+        .right{
+            margin-left:100px;
+            width:100%;
+            background-color: blue;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+<script>
+    var a = 10;
+    (function () {
+        console.log(a)
+        a = 5
+        console.log(window.a)
+        var a = 20;
+        console.log(a)
+    })()
+
+    var b = {
+        a,
+        c: b
+    }
+    console.log(b.c);
+    var w = 10;
+    function test() {
+        var w = 20;
+        console.log(w);
+        console.log(window.w);
+    }
+    test();
+    console.log(w)
+</script>
+<div>
+    <div class="left">左边</div>
+    <div class="right">右边</div>
+</div>
+</body>
+</html>

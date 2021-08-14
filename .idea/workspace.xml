@@ -20,10 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="916c1833-c018-4835-a743-0e9361e8ef23" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/前端常考看代码说输出题/this.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/前端常考看代码说输出题/原型链.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/前端常考看代码说输出题/异步问题.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/两栏布局absolute.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/两栏布局flex.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/两栏布局float.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/前端常考手撕算法题/vue双向数据绑定.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/两栏布局.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/垂直居中.html" beforeDir="false" afterPath="$PROJECT_DIR$/css/垂直居中.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/前端常考手撕算法题/promise.html" beforeDir="false" afterPath="$PROJECT_DIR$/前端常考手撕算法题/promise.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +63,11 @@
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\前端手撕算法\web-Algorithm\面经" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -71,6 +80,12 @@
       <workItem from="1628513533586" duration="187000" />
       <workItem from="1628513819478" duration="8537000" />
       <workItem from="1628578209134" duration="6753000" />
+      <workItem from="1628676650729" duration="144000" />
+      <workItem from="1628692468516" duration="10944000" />
+      <workItem from="1628744812962" duration="945000" />
+      <workItem from="1628749588770" duration="2839000" />
+      <workItem from="1628755039778" duration="24000" />
+      <workItem from="1628919628113" duration="96000" />
     </task>
     <servers />
   </component>
@@ -87,15 +102,25 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1628746856146">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1628746856146" />
     <state x="461" y="164" key="SettingsEditor" timestamp="1628513712168">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="164" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1628513712168" />
-    <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1628514263533">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="573" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1628676753081">
+      <screen x="0" y="0" width="1536" height="824" />
     </state>
+    <state x="573" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824@0.0.1536.824" timestamp="1628676753081" />
+    <state x="882" y="182" width="672" height="538" key="search.everywhere.popup" timestamp="1628700581380">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="882" y="182" width="672" height="538" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1628700581380" />
     <state x="1103" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1628514263533" />
   </component>
 </project>

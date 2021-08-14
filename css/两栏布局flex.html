@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>两栏布局flex</title>
+    <style>
+        .parent {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+        .left {
+            width: 200px;
+            height: 300px;
+            background-color: red;
+        }
+        .right {
+            flex: 1;
+            background-color: blue;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="left">左边</div>
+        <div class="right">右边</div>
+    </div>
+</body>
+</html>

@@ -11,11 +11,15 @@
     <div class="parent2">
         <div class="child2"></div>
     </div>
+    <div class="parent3">
+        <div class="child3"></div>
+    </div>
+
 </body>
 <style>
     .parent {
-        width: 500px;
-        height: 500px;
+        width: 250px;
+        height: 250px;
         border: 1px solid red;
         position: relative;
     }
@@ -31,8 +35,8 @@
         bottom: 0;
     }
     .parent2 {
-        width: 500px;
-        height: 500px;
+        width: 250px;
+        height: 250px;
         border: 1px solid red;
         display: table-cell;
         vertical-align: middle;
@@ -43,6 +47,20 @@
         height: 100px;
         border: 1px solid blue;
         display: inline-block;
+    }
+
+    .parent3 {
+        width: 200px;
+        height: 200px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid red;
+    }
+    .child3 {
+        width: 100px;
+        height: 100px;
+        border: 1px solid blue;
     }
 </style>
 </html>

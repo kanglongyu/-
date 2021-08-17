@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>归并排序</title>
+</head>
+<body>
+<script>
+    Array.prototype.mergeSort = function() {
+        const rec = (arr) => {
+            const len = arr.length;
+            // 已经分到1个1组，不能再分啦
+            if(len === 1) return arr;
+            const mid = Math.floor(len / 2);
+            const leftArr = arr.slice(0, mid);
+            const rightArr = arr.slice(mid, len);
+            // 来递归分组啦
+            // 这两个看做队列
+            const leftOrder = rec(leftArr);
+            const rightOrder = rec(rightArr);
+            console.log(leftOrder, rightOrder)
+            // 结果数组
+            const res = [];
+            // 分好组就来小组排序
+            while(leftOrder.length || rightOrder.length) {
+                if(leftOrder.length && rightOrder.length) {
+                    // 比较队列头，小的就shift出来push到res里
+                    res.push(leftOrder[0] < rightOrder[0] ? leftOrder.shift(0) : rightOrder.shift(0));
+                } else if(leftOrder.length) {
+                    res.push(leftOrder.shift(0));
+                } else if(rightOrder.length) {
+                    res.push(rightOrder.shift(0));
+                } else {
+                    break;
+                }
+            }
+            return res;
+        }
+
+        const res = rec(this);
+        // 将res赋值到this也就是传进来的数组本身上
+        res.forEach((item, key) => {
+            this[key] = item;
+        })
+    }
+
+    // const arr = [1, 5, 9, 3, 18, 6, 2, 7, 0, 6]
+    // arr.mergeSort()
+    // console.log(arr);
+
+    const rec = (arr) => {
+        const len = arr.length;
+        // 已经分到1个1组，不能再分啦
+        if(len === 1) return arr;
+        const mid = Math.floor(len / 2);
+        const leftArr = arr.slice(0, mid);
+        const rightArr = arr.slice(mid, len);
+        // 来递归分组啦
+        // 这两个看做队列
+        const leftOrder = rec(leftArr);
+        const rightOrder = rec(rightArr);
+        // 结果数组
+        const res = [];
+        // 分好组就来小组排序
+        while(leftOrder.length || rightOrder.length) {
+            if(leftOrder.length && rightOrder.length) {
+                // 比较队列头，小的就shift出来push到res里
+                res.push(leftOrder[0] < rightOrder[0] ? leftOrder.shift() : rightOrder.shift());
+            } else if(leftOrder.length) {
+                res.push(leftOrder.shift());
+            } else if(rightOrder.length) {
+                res.push(rightOrder.shift());
+            } else {
+                break;
+            }
+        }
+        return res;
+    }
+    const arr = [1, 5, 9, 3, 18, 6, 2, 7, 0, 6]
+    console.log(rec(arr))
+</script>
+</body>
+</html>

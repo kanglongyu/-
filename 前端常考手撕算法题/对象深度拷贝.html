@@ -36,7 +36,12 @@
             console.log("walk or run");
         }
     }
-    console.log(deepCopy(obj));
+    console.log(obj)
+    let newObj = deepCopy(obj)
+    console.log(newObj);
+    obj.name = "张三"
+    console.log(newObj);
+
 </script>
 </body>
 </html>

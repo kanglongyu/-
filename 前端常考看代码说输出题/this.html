@@ -53,6 +53,16 @@
     //箭头函数作为对象内部的方法时（obj1），向外找this的时候是找到该对象之外的，此处为window，
     // 但是作为对象的属性里面的函数的时候，向外找，就相当于找该属性外面一层，就是该对象，此处就是obj。
 
+
+    var a = function () {
+        this.b = 3;
+    }
+    var c = new a();
+    a.prototype.b = 9;
+    var b = 7;
+    a();
+    console.log(b)
+    console.log(c.b)
 </script>
 </body>
 </html>

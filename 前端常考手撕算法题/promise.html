@@ -112,6 +112,24 @@
             onRejected(this.value);
         }
     };
+
+    new MyPromise((resolve, reject) => {
+        let random = Math.random();
+        resolve(random);
+    })
+    .then(value => {
+        console.log(value);
+    })
+    console.log(99)
+    new Promise(function(resolve,reject) {
+        resolve()
+    })
+    .then(value => {
+        console.log(100);
+    })
+    .then(value => {
+        console.log(101)
+    })
 </script>
 </body>
 </html>

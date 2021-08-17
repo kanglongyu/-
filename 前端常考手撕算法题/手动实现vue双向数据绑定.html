@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>手动实现Vue双向数据绑定</title>
+    <div id="app">
+        <input type="text" v-model="value">
+        <p v-bind="value"></p>
+    </div>
+</head>
+<body>
+<script>
+    window.onload = function() {
+        var app = new myVue({
+            el: "#app",
+            data: {
+                value: "test"
+            },
+            methods: {
+
+            }
+        })
+    }
+
+    function myVue(options) {
+        this._init(options);
+    }
+
+    myVue.prototype._init = function(options) {
+        this.$options = options;
+        this.$el = document.querySelector(options.el);
+        this.$data = options.data;
+        this.$methods = options.methods;
+
+        this._binding = {};
+        this._observer(this.$data);
+        this._compile(this.$el);
+    }
+
+    myVue.prototype._observer = function(obj) {
+        //主要负责的是对obj的每个属性的劫持监听
+        let self = this;
+        Object.keys(obj).forEach(item => {
+            self._binding[item] = {
+                _directives: []
+            }
+            let value = obj[item];
+            let binding = self._binding[item];
+
+            Object.defineProperty(this.$data, item, {
+                configurable: true,
+                enumerable: true,
+                get: function() {
+                    console.log(`获取了值${value}`);
+                    return value;
+                },
+                set: function (newValue) {
+                    console.log(`更新了值${value}`);
+                    if(value !== newValue) {
+                        value = newValue;
+                        binding._directives.forEach(item => {
+                            item.update();
+                        })
+                    }
+                }
+            })
+        })
+    }
+
+    myVue.prototype._compile = function(el) {
+        console.log(el);
+        let self = this;
+        let nodes = el.children;
+        for(let i = 0; i < nodes.length; i++) {
+            let node = nodes[i];
+            if(node.children.length) {
+                self._compile(node);
+            }
+
+            if(node.hasAttribute("v-model") && (node.tagName == 'INPUT' || node.tagName == "TEXTAREA")) {
+                document.addEventListener('input', (function(key) {
+                    let attrVal = node.getAttribute("v-model");
+                    console.log(self._binding)
+                    self._binding[attrVal]._directives.push(new Watcher(
+                        node,
+                        self,
+                        attrVal,
+                        'value'
+                    ))
+                    return function() {
+                        self.$data[attrVal] = nodes[key].value;
+                    }
+                })(i))
+            }
+
+            if(node.hasAttribute("v-bind")) {
+                let attrVal = node.getAttribute("v-bind");
+                self._binding[attrVal]._directives.push(new Watcher(
+                    node,
+                    self,
+                    attrVal,
+                    'innerHTML'
+                ))
+            }
+        }
+    }
+
+    function Watcher(el, vm, val, attr) {
+        this.el = el;//指令对应的dom元素
+        this.vm = vm;//
+        this.val = val;
+        this.attr = attr;
+
+        this.update();
+    }
+
+    Watcher.prototype.update = function () {
+        this.el[this.attr] = this.vm.$data[this.val];
+    }
+</script>
+</body>
+</html>

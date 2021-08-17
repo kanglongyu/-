@@ -20,6 +20,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="916c1833-c018-4835-a743-0e9361e8ef23" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/css/两栏布局absolute.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/css/两栏布局flex.html" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/css/两栏布局float.html" afterDir="false" />
@@ -28,6 +29,22 @@
       <change beforePath="$PROJECT_DIR$/css/两栏布局.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/css/垂直居中.html" beforeDir="false" afterPath="$PROJECT_DIR$/css/垂直居中.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/前端常考手撕算法题/promise.html" beforeDir="false" afterPath="$PROJECT_DIR$/前端常考手撕算法题/promise.html" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/css/圣杯布局.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/前端常考看代码说输出题/异步问题.html" beforeDir="false" afterPath="$PROJECT_DIR$/前端常考看代码说输出题/异步问题.html" afterDir="false" />
+=======
+      <change afterPath="$PROJECT_DIR$/css/两栏布局absolute.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/两栏布局flex.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/两栏布局float.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/前端常考手撕算法题/vue双向数据绑定.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/两栏布局.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/垂直居中.html" beforeDir="false" afterPath="$PROJECT_DIR$/css/垂直居中.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/前端常考手撕算法题/promise.html" beforeDir="false" afterPath="$PROJECT_DIR$/前端常考手撕算法题/promise.html" afterDir="false" />
+>>>>>>> 8c839e0e74a9062d786375e6643f279130465cf3
+>>>>>>> d1309af21a7f6ad184be8e38a88e4ad3f8f89655
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +82,15 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+<<<<<<< HEAD
       <recent name="D:\前端手撕算法\web-Algorithm\面经" />
+=======
+<<<<<<< HEAD
+      <recent name="G:\前端面试\前端常考手撕算法题\排序算法" />
+=======
+      <recent name="D:\前端手撕算法\web-Algorithm\面经" />
+>>>>>>> 8c839e0e74a9062d786375e6643f279130465cf3
+>>>>>>> d1309af21a7f6ad184be8e38a88e4ad3f8f89655
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -79,6 +104,11 @@
       <workItem from="1628493848938" duration="5572000" />
       <workItem from="1628513533586" duration="187000" />
       <workItem from="1628513819478" duration="8537000" />
+<<<<<<< HEAD
+      <workItem from="1628578209134" duration="9622000" />
+      <workItem from="1628679371128" duration="1322000" />
+      <workItem from="1628777670554" duration="1757000" />
+=======
       <workItem from="1628578209134" duration="6753000" />
       <workItem from="1628676650729" duration="144000" />
       <workItem from="1628692468516" duration="10944000" />
@@ -86,6 +116,10 @@
       <workItem from="1628749588770" duration="2839000" />
       <workItem from="1628755039778" duration="24000" />
       <workItem from="1628919628113" duration="96000" />
+<<<<<<< HEAD
+=======
+>>>>>>> 8c839e0e74a9062d786375e6643f279130465cf3
+>>>>>>> d1309af21a7f6ad184be8e38a88e4ad3f8f89655
     </task>
     <servers />
   </component>

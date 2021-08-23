@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>repeat</title>
+</head>
+<body>
+<script>
+// function repeat(func, times, wait) {
+//     return function() {
+//         var arg = arguments;
+//         console.log(arg)
+//         var handle = function(i) {
+//             setTimeout(function() {
+//                 func.apply(null, arg);
+//             }, wait * i)
+//         }
+//         for(let i = 0; i < times; i++) {
+//             handle(i);
+//         }
+//     }
+// }
+function repeat(func, times, wait) {
+    return function() {
+        let arg = arguments;
+        for(let i = 0; i < times; i++) {
+            setTimeout(() => {
+                func.apply(null, arg);
+            }, wait * (i + 1))
+        }
+    }
+}
+var repeatFunc = repeat(console.log, 4, 3000);
+repeatFunc("hellworld");
+</script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>object.create实现</title>
+</head>
+<body>
+<script>
+    function create(obj) {
+        function F() {};
+        F.prototype = obj;
+        return new F();
+    }
+
+    var obj = {
+        a: 1
+    }
+    console.log(create(obj))
+    console.log(Object.create(obj));
+
+    function test() {
+        console.log(111)
+    }
+
+    function test2(callback) {
+        callback();
+        console.log(2222);
+    }
+    test2(test)
+</script>
+
+
+</body>
+</html>

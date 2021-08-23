@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>原型链继承</title>
+</head>
+<body>
+<script>
+    function Person(name) {
+        this.name = name;
+        this.move = function() {
+            console.log("run")
+        }
+    }
+    //原型链继承的原理，让函数的原型为父类的实例
+    function Per() {
+        this.age = 10;
+    }
+    let parent = new Person("jully")
+    parent.sound = "sound";
+    Per.prototype = parent;
+    let p = new Per();
+    console.log(p.sound)
+
+    let p2 = new Per();
+    p2.__proto__.name = "kk";
+    console.log(p, p2)
+    /*  缺点：
+        1、新实例无法向父类构造函数传参。
+        2、继承单一。
+        3、所有新实例都会共享父类实例的属性。（原型上的属性是共享的，一个实例修改了原型属性，另一个实例的原型属性也会被修改!）
+    */
+    console.log(Person.prototype === Object.prototype)
+    console.log(typeof Object)
+</script>
+</body>
+</html>

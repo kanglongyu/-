@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>构造函数继承</title>
+</head>
+<body>
+<script>
+    //让父类函数成为子类函数的属性
+    function Person(name) {
+        this.name = name;
+        this.move = function() {
+            console.log("run")
+        }
+    }
+
+    function per() {
+        Person.call(this, "jeer")
+    }
+
+</script>
+</body>
+</html>

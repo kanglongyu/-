@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CSS动画之transition</title>
+    <style>
+        /*点击按钮执行动画*/
+        .transi1{
+            position: absolute;
+            top: 260px;
+            left:10px;
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            transition: all 2s ease;
+        }
+        .transi2{
+            background-color: blue;
+            transform: rotate(45deg);
+            left: 400px;
+        }
+
+        /*鼠标hover时的动画*/
+        .hover{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            transition: background-color 2s,width 2s;
+        }
+        .hover:hover{
+            background-color: red;
+            width: 300px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="hover">第一个过渡动画</div>
+<hr>
+<button>执行动画</button>
+<div id="di1" class="transi1">第二个过渡动画</div>
+<script>
+    var btn  = document.getElementsByTagName("button")[0];
+    btn.addEventListener("click",function(){
+        var di = document.getElementById("di1");
+        di.setAttribute("class","transi1 transi2");
+    });
+</script>
+</body>
+</html>

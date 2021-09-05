@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实现object.create</title>
+</head>
+<body>
+<script>
+    //object.create使用，创建一个新的实例对象，这个对象继承了
+    //输入的对象
+    let obj = {
+        a: 0,
+        b: function() {
+            console.log("ddd")
+        }
+    }
+    let newObj = Object.create(obj)
+    console.log(newObj)
+
+    //自实现object.create
+    Object.prototype.myCreate = function(obj) {
+        function Fn(){}
+        Fn.prototype = obj;
+        return new Fn();
+    }
+    let myNewObj = Object.myCreate(obj)
+    console.log(myNewObj)
+</script>
+</body>
+</html>

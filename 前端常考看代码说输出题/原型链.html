@@ -36,6 +36,12 @@
     var s = new Student('Tom')
     console.log(s instanceof Person) // true
 
+    function test() {
+        let a = 0;
+    }
+    console.log(test.prototype);
+    let a = new test();
+    console.log(a)
 </script>
 </body>
 </html>

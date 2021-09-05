@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>promise自实现</title>
+</head>
+<body>
+<script>
+    const isFunction = item => typeof item === 'function';
+    const PENDING = 'pending';
+    const FULFILLED = 'fulfilled';
+    const REJECTED = 'rejected';
+
+    function myPromise(handle) {
+        if(!isFunction(handle)) {
+            throw new Error("typeError")
+        }
+
+        let self = this;
+        this.status = PENDING;
+        this.value = undefined;
+        this.reason = undefined;
+        this.resolvedQueue = [];
+        this.rejectedQueue = [];
+
+        function resolve(value) {
+            setTimeout(() => {
+                if(self.status === PENDING) {
+                    self.status = FULFILLED;
+                    self.value = value;
+                    self.resolvedQueue.forEach(callback => {
+                        callback(value);
+                    })
+                }
+            },0)
+        }
+        function reject(reason) {
+            setTimeout(() => {
+                if(self.status === PENDING) {
+                    self.status = REJECTED;
+                    self.reason = reason;
+                    self.rejectedQueue.forEach(callback => {
+                        callback(reason);
+                    })
+                }
+            },0)
+        }
+
+        try {
+            handle(resolve, reject);
+        } catch(e) {
+            reject(e);
+        }
+    }
+
+    myPromise.prototype.then = function(onFulfilled,onRejected) {
+        onFulfilled = typeof onFulfilled === 'function' ? onFulfilled : function(value) {
+            return value;
+        }
+        onRejected = typeof onRejected === 'function' ? onRejected : function(reason) {
+            return reason;
+        }
+        if(this.status === PENDING) {
+            this.resolvedQueue.push(onFulfilled);
+            this.rejectedQueue.push(onRejected);
+        }
+
+        if(this.status === FULFILLED) {
+            onFulfilled(this.value);
+        }
+
+        if(this.status=== REJECTED) {
+            onRejected(this.reason);
+        }
+    }
+
+    let handle = "111"
+    new myPromise((resolve, rejecte) => {
+        let random = Math.random();
+        if(random > 0.5) {
+            resolve("value");
+        } else {
+            rejecte("reason");
+        }
+    })
+        .then(value => {
+                console.log(value);
+            },
+            reason => {
+                console.log(reason);
+            })
+</script>
+</body>
+</html>

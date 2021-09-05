@@ -115,10 +115,16 @@
 
     new MyPromise((resolve, reject) => {
         let random = Math.random();
-        resolve(random);
+        if(random > 0.5) {
+            resolve("1111");
+        } else {
+            reject("2222")
+        }
     })
     .then(value => {
         console.log(value);
+    }, reason => {
+        console.log(reason);
     })
     console.log(99)
     new Promise(function(resolve,reject) {

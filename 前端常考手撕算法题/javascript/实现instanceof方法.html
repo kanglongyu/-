@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>instanceof方法实现</title>
+</head>
+<body>
+<script>
+    /*
+    instanceof的原理，左边是一个对象，右边是一个函数
+    原理就是判断右边的函数的prototype是否出现在对象的原型链上的任意一个位置
+    如果出现了就返回true，否则的话就返回false
+     */
+    function myInstanceof(left, right) {
+        let proto = Object.getPrototypeOf(left);
+        let prototype = right.prototype;
+        while(true) {
+            if(proto == null) {
+                return false;
+            }
+            if(proto === prototype) {
+                return true;
+            }
+            proto = Object.getPrototypeOf(proto);
+        }
+    }
+
+    let a = [];
+    console.log(myInstanceof(a, Function))
+</script>
+</body>
+</html>

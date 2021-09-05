@@ -20,18 +20,24 @@
 //         }
 //     }
 // }
-function repeat(func, times, wait) {
-    return function() {
-        let arg = arguments;
-        for(let i = 0; i < times; i++) {
-            setTimeout(() => {
-                func.apply(null, arg);
-            }, wait * (i + 1))
-        }
-    }
+// function repeat(func, times, wait) {
+//     return function() {
+//         let arg = arguments;
+//         for(let i = 0; i < times; i++) {
+//             setTimeout(() => {
+//                 func.apply(null, arg);
+//             }, wait * (i + 1))
+//         }
+//     }
+// }
+// var repeatFunc = repeat(console.log, 4, 3000);
+// repeatFunc("hellworld");
+let a = 0
+console.log(window.a)
+function foo() {
+    var b = 1;
 }
-var repeatFunc = repeat(console.log, 4, 3000);
-repeatFunc("hellworld");
+console.log(window.b)
 </script>
 </body>
 </html>

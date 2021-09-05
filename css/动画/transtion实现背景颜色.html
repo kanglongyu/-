@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>transtion实现背景颜色改变</title>
+    <style>
+        div {
+            background-color: red;
+            width: 400px;
+            height: 200px;
+        }
+
+        div:hover {
+            background-color: blue;
+            -webkit-transition-property: background-color;
+            -webkit-transition-duration: 2s;
+            -webkit-transition-delay: -500ms;
+            -webkit-transition-timing-function: ease-out;
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>

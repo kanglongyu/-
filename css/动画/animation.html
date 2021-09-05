@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation动画</title>
+    <style>
+        div {
+            margin: auto;
+            width: 400px;
+            height: 300px;
+            background-color: red;
+            -webkit-transform-style: preserve-3d;
+            -webkit-animation-name: x-spin;
+            -webkit-animation-duration: 20s;
+            -webkit-animation-iteration-count: infinite;
+            -webkit-animation-timing-function: linear;
+        }
+        /*调用动画*/
+        @-webkit-keyframes x-spin {
+            0% {
+                -webkit-transform: rotateX(0deg)
+            }
+            50% {
+                -webkit-transform: rotateX(180deg);
+            }
+            100% {
+                -webkit-transform: rotateX(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+<div></div>
+</body>
+</html>
